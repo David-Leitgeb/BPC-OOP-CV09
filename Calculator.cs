@@ -122,18 +122,22 @@ namespace BPC_OOP_CV09
                     }
                     break;
                 case "MS":
-                    memory = currentNumber;
+                    if(_state == State.Result)
+                    {
+                        memory = Display;
+                    }
+                    else
+                    {
+                        memory = currentNumber;
+                    }
                     Memory = "M";
                     break;
                 case "MR":
                     currentNumber = memory;
                     break;
                 case "MC":
-                    if (memory != "")
-                    {
                         memory = "";
                         Memory = "";
-                    }
                     break;
                 case "M+":
                     if (memory != "")
@@ -166,16 +170,19 @@ namespace BPC_OOP_CV09
                     Display = firstNumber + operation + secondNumber;
                     break;
                 case State.Result:
-                    if (firstNumber == "" || secondNumber == "")
+                    if (firstNumber == "") { }
+                    if ((firstNumber == "" || operation == "") && secondNumber == "")
                     {
+                        Display = firstNumber;
                     }
                     else
                     {
                         Display = Calculate();
-                        firstNumber = Calculate();
-                        currentNumber = "";
+                        firstNumber = Display;                    
                     }
-                    _state = State.Operation;
+                    currentNumber = "";
+                    operation = "";
+                    _state = State.FirstNumber;
                     break;
             }
         }
