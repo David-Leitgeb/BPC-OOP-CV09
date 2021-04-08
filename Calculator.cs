@@ -201,7 +201,7 @@ namespace BPC_OOP_CV09
                     if (operand2 == 0)
                     {
                         //throw new Exception("Dividing by zero!");
-                        Display = "Math ERROR";
+                        Display = "Math ERROR"; //Nějakým způsobem se mi podařilo na konci cvičení tuhle podmínku rozbít
                     }
                     else
                     {
