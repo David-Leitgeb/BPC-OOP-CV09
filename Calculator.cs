@@ -68,11 +68,6 @@ namespace BPC_OOP_CV09
                     break;
                 case ".":
                     if (currentNumber.Contains(".")) { }
-                    /*if (currentNumber == "")
-                    {
-                        currentNumber = "0";
-                        value = ".";
-                    }*/
                     else
                     {
                         value = ".";
@@ -206,7 +201,7 @@ namespace BPC_OOP_CV09
                     if (operand2 == 0)
                     {
                         //throw new Exception("Dividing by zero!");
-                        Display = "Math error";
+                        Display = "Math ERROR";
                     }
                     else
                     {
