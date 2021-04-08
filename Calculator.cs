@@ -177,7 +177,7 @@ namespace BPC_OOP_CV09
                     }
                     else
                     {
-                        Display = Calculate();
+                        Display = Convert.ToString(Calculate());
                         firstNumber = Display;                    
                     }
                     currentNumber = "";
@@ -186,7 +186,7 @@ namespace BPC_OOP_CV09
                     break;
             }
         }
-        private string Calculate()
+        private double Calculate()
         {
             double operand1 = Convert.ToDouble(firstNumber);
             double operand2 = Convert.ToDouble(secondNumber);
@@ -214,7 +214,7 @@ namespace BPC_OOP_CV09
                     }
                     break;
             }
-            return "" + result;
+            return result;
         }
 
     }
